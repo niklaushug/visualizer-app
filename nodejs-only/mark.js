@@ -31,7 +31,7 @@ export class Watermark {
       opacitySource: 0.5
     })
 
-    await image.writeAsync(`out/${Date.now()}.png`);
+    await image.writeAsync(`../output/${Date.now()}.png`);
 
     const endTime = new Date()
     console.log(`mark "${imagePath}" with "${watermarkPath}" (${endTime - startTime}ms)`)
