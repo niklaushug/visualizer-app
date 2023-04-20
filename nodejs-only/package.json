@@ -4,12 +4,15 @@
   "description": "",
   "main": "mark.js",
   "scripts": {
-    "start": "node index.js"
+    "mark": "node index.js",
+    "example": "node example.js",
+    "encode": "node geheimsprache.js"
   },
   "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "jimp": "^0.22.7"
   }
 }
