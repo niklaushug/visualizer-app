@@ -1,5 +1,5 @@
 import { assertEquals } from "https://deno.land/std@0.183.0/testing/asserts.ts";
-import { add } from "./main.ts";
+import { add } from "./example.ts";
 
 Deno.test(function addTest() {
   assertEquals(add(2, 3), 5);
