@@ -1,6 +1,7 @@
 {
   "tasks": {
     "example": "deno run example.ts",
+    "meta": "deno run --allow-read metaA.ts",
     "mark": "deno run --allow-read --allow-write index.ts"
   }
 }
