@@ -1,8 +1,8 @@
 {
   "tasks": {
-    "example": "deno run example.ts",
+    "compute": "deno run computer_local.ts",
     "meta": "deno run --allow-read metaA.ts",
-    "mark": "deno run --allow-read --allow-write index.ts",
-    "encode": "deno run --allow-read --allow-env geheimsprache.ts"
+    "mark": "deno run --allow-read --allow-write mark_local.ts",
+    "encode": "deno run --allow-read --allow-env geheimsprache_local.ts"
   }
 }

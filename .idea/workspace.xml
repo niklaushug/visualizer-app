@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42648b58-d83d-4ab6-9db7-7ad687506c3e" name="Changes" comment="Move folder assets and o">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="42648b58-d83d-4ab6-9db7-7ad687506c3e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/deno-only/computer_local.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deno-only/geheimsprache_local.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nodejs-only/computer_local.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nodejs-only/geheimsprache_local.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deno-only/deno.jsonc" beforeDir="false" afterPath="$PROJECT_DIR$/deno-only/deno.jsonc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deno-only/example.ts" beforeDir="false" afterPath="$PROJECT_DIR$/deno-only/computer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deno-only/example_bench.ts" beforeDir="false" afterPath="$PROJECT_DIR$/deno-only/computer_bench.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deno-only/example_test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/deno-only/computer_test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deno-only/geheimsprache.ts" beforeDir="false" afterPath="$PROJECT_DIR$/deno-only/geheimsprache.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deno-only/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/deno-only/mark_local.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs-only/example.js" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs-only/computer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs-only/geheimsprache.js" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs-only/geheimsprache.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs-only/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs-only/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,22 +47,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/niklaushug/projects/Projects_Test/visualizer-app/deno-only&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;android.project.structure&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/IntelliJ IDEA.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/niklaushug/projects/Projects_Test/visualizer-app/nodejs-only",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "android.project.structure",
+    "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/nodejs-only" />
       <recent name="$PROJECT_DIR$/deno-only" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -86,7 +100,7 @@
       <workItem from="1681819600733" duration="215000" />
       <workItem from="1681819819648" duration="210000" />
       <workItem from="1681820030649" duration="4811000" />
-      <workItem from="1681969839802" duration="437000" />
+      <workItem from="1681969839802" duration="6588000" />
     </task>
     <task id="LOCAL-00001" summary="Establish script to watermark images.">
       <created>1681815316325</created>
@@ -116,7 +130,49 @@
       <option name="project" value="LOCAL" />
       <updated>1681970166955</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add .idea folder.">
+      <created>1681970286913</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681970286913</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add .idea folder.">
+      <created>1681970297725</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681970297725</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add deno.lock.">
+      <created>1681970307795</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681970307795</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add metadata script.&#10;&#10;- Solely copied from https://deno.land/manual@v1.32.5/examples/module_metadata.">
+      <created>1681971541143</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1681971541143</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add geheimsprache script.&#10;&#10;- Encodes text with given dialect.&#10;- Dialect is defined in env file.">
+      <created>1681974626511</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681974626511</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Reuse Deno scripts in Node.&#10;&#10;- Use correct package to load env file.">
+      <created>1681975463167</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681975463167</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,7 +194,13 @@
     <MESSAGE value="Move files." />
     <MESSAGE value="Move folder assets and output." />
     <MESSAGE value="Reuse watermark in Deno.&#10;&#10;- Add types to watermark script.&#10;- Add task to start watermark script.&#10;- Rename Deno example." />
-    <option name="LAST_COMMIT_MESSAGE" value="Reuse watermark in Deno.&#10;&#10;- Add types to watermark script.&#10;- Add task to start watermark script.&#10;- Rename Deno example." />
+    <MESSAGE value="Move folder assets and o" />
+    <MESSAGE value="Add .idea folder." />
+    <MESSAGE value="Add deno.lock." />
+    <MESSAGE value="Add metadata script.&#10;&#10;- Solely copied from https://deno.land/manual@v1.32.5/examples/module_metadata." />
+    <MESSAGE value="Add geheimsprache script.&#10;&#10;- Encodes text with given dialect.&#10;- Dialect is defined in env file." />
+    <MESSAGE value="Reuse Deno scripts in Node.&#10;&#10;- Use correct package to load env file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Reuse Deno scripts in Node.&#10;&#10;- Use correct package to load env file." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

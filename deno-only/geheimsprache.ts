@@ -12,5 +12,3 @@ export function encode(input: string): string {
     const output = input.replace(regex, replacer)
     return output
 }
-
-console.log(encode('Hallo'))

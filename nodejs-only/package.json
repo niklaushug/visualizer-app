@@ -4,9 +4,9 @@
   "description": "",
   "main": "mark.js",
   "scripts": {
-    "mark": "node index.js",
-    "example": "node example.js",
-    "encode": "node geheimsprache.js"
+    "compute": "node computer_local.js",
+    "mark": "node mark_local.js",
+    "encode": "node geheimsprache_local.js"
   },
   "type": "module",
   "author": "",
