@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<script type="module">
-import { add } from "./build/release.js";
-document.body.innerText = add(1, 2);
-</script>
-</head>
-<body></body>
+<head></head>
+<body>
+    <h3>add(1, 2)</h3>
+    <output class="add"></output>
+    <script type="module">
+      import { add } from "./build/release.js";
+      document.querySelector('.add').innerText = add(1, 2);
+    </script>
+
+    <h3>minus(52, 3);</h3>
+    <output class="minus"></output>
+    <script type="module">
+      import { minus } from "./build/release.js";
+      document.querySelector('.minus').innerText = minus(52, 3);
+    </script>
+
+    <h3>Watermark.resize(http://localhost:3000/assets/17.jpg, http://localhost:3000/assets/inventage-logo-farbig.png)</h3>
+    <img src="http://localhost:3000/assets/17.jpg" style="max-width: 300px">
+    <img src="http://localhost:3000/assets/inventage-logo-farbig.png" style="max-width: 300px">
+    <img class="image">
+
+    <script type="module">
+      import { Watermark } from "./build/release.js";
+      const watermark = new Watermark()
+
+        this.watermark.resize('http://localhost:3000/assets/17.jpg, http://localhost:3000/assets/inventage-logo-farbig.png')
+          .then(image => {
+            console.log('watermark.resize() successful')
+            image.getBase64(Jimp.AUTO, (err, src) => {
+              console.log(err, data)
+              if (err || !data) { return }
+              this.generatedImage = data
+
+              document.querySelector('.image').setAttribute('src', data)
+            })
+          })
+          .catch(error => console.log('watermark.resize() failed', error));
+
+
+
+    </script>
+</body>
 </html>
