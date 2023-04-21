@@ -1,6 +1,7 @@
-// const Jimp = require('jimp');
-
-import Jimp from 'jimp'
+// import Jimp from 'jimp'  // import path for Node.js
+import 'jimp/browser/lib/jimp'  // import path for Browsers
+// Path could be replaced in vite.config.js by resolve.alias but not partial `Jimp from`.
+// Ignoring with @vite-ignore, moving import to mark_local.js or a conditional import did not help
 
 export class Watermark {
   static OFFSET = 100

@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
+import { Watermark } from "./lib/mark.js";
 
 @customElement('watermark-app')
 export class WatermarkApp extends LitElement {
@@ -8,6 +9,11 @@ export class WatermarkApp extends LitElement {
 
   @state()
   watermarkImage = '/src/assets/inventage-logo-farbig.png'
+
+  @state()
+  generatedImage = 'https://placehold.co/200'
+
+  watermark = new Watermark()
 
   render() {
     return html`
@@ -34,8 +40,9 @@ export class WatermarkApp extends LitElement {
         
         <div class="generated-image">
           <h3>Composition</h3>
+          <p>Composition is based on static files.</p>
           <button @click="${this.generateComposition}">Generate composition</button>
-          <img src="https://placehold.co/200">
+          <img src="${this.generatedImage}">
         </div>
       </div>
     `
@@ -54,8 +61,16 @@ export class WatermarkApp extends LitElement {
   }
 
   generateComposition() {
-    console.log('generate')
-    // TODO generate composition from default image (url) or selected image by input (dataurl)
+    this.watermark.resize('http://127.0.0.1:5173/src/assets/2.jpeg', 'http://127.0.0.1:5173/src/assets/inventage-logo-farbig.png')
+      .then(image => {
+        console.log('watermark.resize() successful')
+        image.getBase64(Jimp.AUTO, (err, src) => {
+          console.log(err, src)
+          if (err || !src) { return }
+          this.generatedImage = src
+        })
+      })
+      .catch(error => console.log('watermark.resize() failed', error));
   }
 
   static styles = css`

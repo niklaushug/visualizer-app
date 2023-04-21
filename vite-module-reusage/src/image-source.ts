@@ -30,6 +30,7 @@ export class ImageSource extends LitElement {
   render() {
     return html`
       <h3>${ this.title }</h3>
+      <p>Images can be replaced but not used in section composition.</p>
       <img src="${ this.image }">
       <input type="file" @change="${this.handleChange}">
     `
