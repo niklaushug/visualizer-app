@@ -1,14 +1,19 @@
-import { LitElement, css, html } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { LitElement, css, html, unsafeCSS } from 'lit';
+import { customElement, property, state } from 'lit/decorators.js';
+import {when} from 'lit/directives/when.js';
+
+
+import styles from './base-image-selector.scss?inline';
 
 @customElement('base-image-selector')
 export class BaseImageSelector extends LitElement {
+  static styles = unsafeCSS(styles);
+
   @property({type: String})
   image?: string | ArrayBuffer | null
 
   @state()
   baseImageObjectUrl
-
   reader = new FileReader()
 
   bindReaderOnLoad() {
@@ -37,9 +42,20 @@ export class BaseImageSelector extends LitElement {
 
   render() {
     return html`
-      <h3>Base Image Selector</h3>
-      <img src="${ this.image }">
-      <input type="file" @change="${this.handleChange}">
+      ${when(this.image, 
+        () => html`
+          <h3>Selected Base Image</h3>
+          <figure  class="image-display">
+            <img src="${ this.image }">
+          </figure>
+        `,
+        () => html`
+          <h3>Choose Image</h3>
+          <label class="image-upload">
+            <input type="file" @change="${this.handleChange}">
+          </label>
+        `)
+    }
     `
   }
 
@@ -54,25 +70,6 @@ export class BaseImageSelector extends LitElement {
 
     this.reader.readAsDataURL(image)
   }
-
-  static styles = css`
-   :host {
-      display: block;
-      width: 100%;
-    }
-    
-    img {
-      max-width: 100%;
-      background-color: white;
-      background-image:
-        linear-gradient(45deg, #ccc 25%, transparent 25%),
-        linear-gradient(-45deg, #ccc 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #ccc 75%),
-        linear-gradient(-45deg, transparent 75%, #ccc 75%);
-      background-size:20px 20px;
-      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;     
-    }
-  `
 }
 
 declare global {

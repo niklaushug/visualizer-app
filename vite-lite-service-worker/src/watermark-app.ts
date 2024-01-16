@@ -1,9 +1,13 @@
-import {LitElement, css, html} from 'lit'
+import {LitElement, css, html, unsafeCSS} from 'lit'
 import {customElement, state} from 'lit/decorators.js'
 import {LOGOS} from './lib/logos'
 
+import styles from './watermark-app.scss?inline';
+
 @customElement('watermark-app')
 export class WatermarkApp extends LitElement {
+    static styles = unsafeCSS(styles)
+
     @state()
     underlyingImage = '/src/assets/2.jpeg'
 
@@ -93,7 +97,10 @@ export class WatermarkApp extends LitElement {
     render() {
         return html`
             <h1>Watermark App</h1>
-
+            
+<!--            <country-select></country-select>-->
+<!--            <country-table></country-table>-->
+            
             <div class="layout-images">
                 <base-image-selector></base-image-selector>
                 <watermark-selector></watermark-selector>
@@ -107,23 +114,6 @@ export class WatermarkApp extends LitElement {
             </div>
         `
     }
-
-    static styles = css`
-    :host {
-      display:block;
-      width: 100%;
-    }
-    
-    .layout-images {
-      display: grid;
-      grid-template-columns: repeat(3, 33%);
-      gap: 1rem;      
-    }
-    
-    img {
-      max-width: 100%
-    }
-  `
 }
 
 declare global {

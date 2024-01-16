@@ -58,7 +58,7 @@ export class ImageSource extends LitElement {
   static styles = css`
    :host {
       display: block;
-      width: 100%;
+      width: 100%;      
     }
     
     img {

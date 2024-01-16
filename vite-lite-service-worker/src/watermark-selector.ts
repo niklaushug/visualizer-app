@@ -1,10 +1,13 @@
-import { LitElement, css, html } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import {LitElement, css, html, unsafeCSS} from 'lit'
+import {customElement, property, state} from 'lit/decorators.js'
 
-import { Logo, LOGOS } from './lib/logos'
+import {Logo, LOGOS} from './lib/logos'
+import styles from './watermark-selector.scss?inline';
 
 @customElement('watermark-selector')
 export class WatermarkSelector extends LitElement {
+  static styles = unsafeCSS(styles)
+
   @property({type: Object})
   selectedLogo: Logo = LOGOS[0]
 
@@ -29,41 +32,36 @@ export class WatermarkSelector extends LitElement {
   render() {
     return html`
       <h3>Select Logo</h3>
-      
-      <select 
-        @change=${this.handleSelection}>
+
+      <div
+        class="watermark-selector">
         ${this.logos.map((logo) =>
           html`
-            <option 
-              value=${logo.key}
-              ?selected=${logo.key === this.selectedLogo.key}
-            >${logo.name}</option>`
+            <label class="watermark-option">
+              <input
+                class="radio"
+                name="watermark"
+                type="radio">
+              <img
+                class="image"
+                src=${logo.url}
+                alt="${logo.name}"
+                ?selected=${logo.key === this.selectedLogo.key}
+              />
+              <span class="name">${logo.name}</span>
+            </label>
+          `
         )}
-      </select>
-      
-      <img src="${ this.selectedLogo.url }">
+      </div>
     `
   }
-
-  static styles = css`
-   :host {
-      display: block;
-      width: 100%;
-    }
-    
-    img {
-      max-width: 100%;
-      background-color: white;
-      background-image:
-        linear-gradient(45deg, #ccc 25%, transparent 25%),
-        linear-gradient(-45deg, #ccc 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #ccc 75%),
-        linear-gradient(-45deg, transparent 75%, #ccc 75%);
-      background-size:20px 20px;
-      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;     
-    }
-  `
 }
+
+// TODO Update selection on click
+// @click=${this.handleSelection}
+
+// TODO use saved key to mark selected watermark of last session
+// ?selected=${logo.key === this.selectedLogo.key}
 
 declare global {
   interface HTMLElementTagNameMap {

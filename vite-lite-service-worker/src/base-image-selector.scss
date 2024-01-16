@@ -1,0 +1,87 @@
+@use './styles/base';
+
+@mixin fade-overlay-and-symbol($character) {
+  position: relative;
+
+  &::after {
+    content: '#{$character}';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-weight: 500;
+    font-size: 2rem;
+  }
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-display {
+  min-height: 100px;
+  margin: 0;
+
+  @include fade-overlay-and-symbol($character: '╳');
+
+  &:hover::after  {
+    opacity: 1;
+  }
+
+  &::after {
+    background: #444;
+    border: 2px solid #bbb;
+    padding: 1rem;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    width: 3.2rem;
+    text-align: center;
+    opacity: 0.3;
+    transition: opacity ease-in-out 400ms;
+  }
+
+  > img {
+    display: block;
+    margin: 0 auto;
+    max-height: 100vh;
+    border: 2px dashed #bbb;
+    border-radius: 4px;
+    background-color: #444;
+  }
+}
+
+.image-upload {
+  display: block;
+  width: 100%;
+  min-height: 100px;
+  border: 2px dashed #bbb;
+  border-radius: 4px;
+
+  background-color: #444;
+  transition: background-color ease-in-out 200ms;
+
+  @include fade-overlay-and-symbol($character: '↓');
+
+  &::after {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    background-color: #666;
+  }
+
+  > img {
+    display: block;
+    max-width: 100%;
+    background-color: white;
+  }
+
+  > input {
+    display: none;
+  }
+}
+
+
